@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>تسجيل الدخول - سند</title>
+    <meta name="viewport" content="width=375, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- وسوم Open Graph لمشاركة الرابط مع الشعار -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sanadjo.vercel.app/">
+    <meta property="og:title" content="تسجيل الدخول - سند">
+    <meta property="og:description" content="بوابة سند - تسجيل الدخول">
+    <meta property="og:image" content="https://www2.0zz0.com/2025/07/08/07/530152226.png">
+
+    <!-- وسوم Twitter Card -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://sanadjo.vercel.app/">
+    <meta property="twitter:title" content="تسجيل الدخول - سند">
+    <meta property="twitter:description" content="بوابة سند - تسجيل الدخول">
+    <meta property="twitter:image" content="https://www2.0zz0.com/2025/07/08/07/530152226.png">
+
+    <style>
+        :root {
+            --sanad-green: #00b874;
+            --sanad-gray: #444;
+            --input-bg: #fff;
+            --input-border: #222;
+            --input-radius: 12px;
+            --input-height: 58px;
+            --black: #000;
+            --border-width: 2px;
+        }
+        body {
+            margin: 0;
+            background: #fcfcfc;
+            font-family: 'Cairo', Arial, sans-serif;
+            min-height: 100vh;
+            color: var(--sanad-gray);
+        }
+        .container {
+            max-width: 430px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+        .logo-area {
+            text-align: center;
+            margin-top: 42px;
+            margin-bottom: 32px;
+        }
+        .sanad-logo {
+            width: 120px;
+            max-width: 180px;
+            margin: 0 auto 12px auto;
+            display: block;
+        }
+        .sanad-text {
+            font-size: 2.1rem;
+            color: var(--sanad-gray);
+            margin-top: 12px;
+            letter-spacing: 2px;
+            font-weight: bold;
+        }
+        .card-btn {
+            width: 100%;
+            height: var(--input-height);
+            border: var(--border-width) solid var(--input-border);
+            border-radius: var(--input-radius);
+            background: #fff;
+            font-size: 1.28rem;
+            font-weight: 700;
+            color: var(--black);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            cursor: pointer;
+            margin-bottom: 25px;
+            transition: border-color 0.2s;
+        }
+        .card-btn:hover {
+            border-color: var(--sanad-green);
+        }
+        .fingerprint-icon {
+            font-size: 1.5em;
+            margin-right: 6px;
+            display: inline-block;
+        }
+        .or-sep {
+            text-align: center;
+            margin: 18px 0 16px 0;
+            color: var(--sanad-gray);
+            font-size: 1.2rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+        .input-group {
+            position: relative;
+            margin-bottom: 15px;
+        }
+        .input-field {
+            width: 100%;
+            background: var(--input-bg);
+            border: var(--border-width) solid var(--input-border);
+            border-radius: var(--input-radius);
+            height: var(--input-height);
+            font-size: 1.22rem;
+            color: var(--sanad-gray);
+            padding-right: 52px;
+            padding-left: 52px;
+            outline: none;
+            font-family: inherit;
+            box-sizing: border-box;
+            transition: border-color 0.2s;
+        }
+        .input-field:focus {
+            border-color: var(--sanad-green);
+        }
+        .input-icon {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.25em;
+            color: #888;
+        }
+        .input-icon.right {
+            right: 16px;
+        }
+        .input-icon.left {
+            left: 16px;
+            cursor: pointer;
+        }
+        .row-options {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+            font-size: 1.01rem;
+        }
+        .row-options label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+        }
+        .row-options input[type="checkbox"] {
+            accent-color: var(--sanad-green);
+            margin-left: 5px;
+            width: 18px;
+            height: 18px;
+        }
+        .row-options a {
+            color: var(--sanad-gray);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .row-options a:hover {
+            text-decoration: underline;
+        }
+        .login-btn {
+            width: 100%;
+            height: var(--input-height);
+            border: none;
+            border-radius: var(--input-radius);
+            background: var(--black);
+            color: #fff;
+            font-size: 1.32rem;
+            font-weight: 700;
+            margin-top: 10px;
+            cursor: pointer;
+            margin-bottom: 28px;
+            transition: background 0.2s;
+        }
+        .login-btn:active {
+            background: #222;
+        }
+        .account-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            font-size: 1.12rem;
+            margin-bottom: 30px;
+        }
+        .account-row span {
+            color: #888;
+        }
+        .account-row a {
+            color: var(--sanad-green);
+            font-weight: 700;
+            text-decoration: none;
+        }
+        .account-row a:hover {
+            text-decoration: underline;
+        }
+        /* Verification Modal */
+        .modal-backdrop, .popup-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.10);
+            z-index: 98;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal, .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 94vw;
+            max-width: 330px;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(0,184,116,0.13), 0 1.5px 5px rgba(0,184,116,0.04);
+            padding: 2rem 1.5rem 1.2rem 1.5rem;
+            z-index: 99;
+            text-align: center;
+            border: 1.5px solid #eaeaea;
+        }
+        .verify-label {
+            font-size: 1.14rem;
+            color: var(--sanad-gray);
+            margin-bottom: 1.1rem;
+            font-weight: 700;
+            letter-spacing: 0.6px;
+        }
+        .code-inputs {
+            display: flex;
+            gap: 0.7rem;
+            justify-content: center;
+            margin-bottom: 1.1rem;
+            direction: ltr;
+        }
+        .code-inputs input {
+            width: 2.5rem;
+            height: 2.6rem;
+            font-size: 1.5rem;
+            text-align: center;
+            border: 1.5px solid var(--input-border);
+            border-radius: 8px;
+            outline: none;
+            transition: border-color 0.18s;
+        }
+        .code-inputs input:focus {
+            border-color: var(--sanad-green);
+        }
+        .verify-btn {
+            width: 100%;
+            padding: 0.82rem;
+            background: linear-gradient(90deg, var(--sanad-green), #09e17d);
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.08rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 0.5rem;
+            transition: box-shadow 0.14s;
+        }
+        .verify-success {
+            color: var(--sanad-green);
+            font-size: 1.18rem;
+            font-weight: bold;
+            margin: 1.5rem 0;
+        }
+        .error-message {
+            color: #f44336;
+            font-size: 0.97rem;
+            margin-bottom: 1.1rem;
+        }
+        .popup {
+            min-height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .popup-btn {
+            margin-top: 1.3rem;
+            padding: 0.7rem 1.2rem;
+            font-size: 1.01rem;
+            background: var(--sanad-green);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: bold;
+        }
+        @media (max-width: 480px) {
+            .container { padding: 0 4px; }
+            .logo-area { margin-top: 28px; }
+            .sanad-logo { max-width: 110px; }
+            .sanad-text { font-size: 1.3rem; }
+            .login-btn, .card-btn, .input-field { font-size: 1rem; height: 48px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="login-container">
+        <div class="logo-area">
+            <img class="sanad-logo" src="https://www2.0zz0.com/2025/07/08/07/530152226.png" alt="Sanad Logo">
+            <div class="sanad-text">SANAD</div>
+        </div>
+        <button class="card-btn" id="fingerprint-btn" type="button">
+            الدخول باستخدام البصمة
+            <span class="fingerprint-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24">
+                    <g fill="none" stroke="#222" stroke-width="2">
+                        <ellipse cx="12" cy="12" rx="8" ry="9"/>
+                        <path d="M12 17c-2.5 0-3.5-2-3.5-5s1-5 3.5-5 3.5 2 3.5 5-1 5-3.5 5z"/>
+                        <path d="M12 21c-4 0-6-3.5-6-9"/>
+                        <path d="M12 21c4 0 6-3.5 6-9"/>
+                    </g>
+                </svg>
+            </span>
+        </button>
+        <div class="or-sep">أو</div>
+        <form id="loginForm" autocomplete="off">
+            <div class="input-group">
+                <input type="text" class="input-field" id="nid" name="nid" maxlength="10" pattern="[0-9]{10}" placeholder="الرقم الوطني" inputmode="numeric" required>
+                <span class="input-icon right">
+                    <svg width="23" height="23" fill="none" stroke="#222" stroke-width="2" viewBox="0 0 24 24">
+                        <circle cx="12" cy="8" r="4"/>
+                        <path d="M4 20c0-3.5 3.5-7 8-7s8 3.5 8 7"/>
+                    </svg>
+                </span>
+            </div>
+            <div class="input-group">
+                <input type="password" class="input-field" id="password" name="password" placeholder="كلمة السر" required>
+                <span class="input-icon right">
+                    <svg width="22" height="22" fill="none" stroke="#222" stroke-width="2" viewBox="0 0 24 24">
+                        <rect x="5" y="11" width="14" height="8" rx="3"/>
+                        <path d="M8 11V8a4 4 0 1 1 8 0v3"/>
+                    </svg>
+                </span>
+                <span class="input-icon left" style="left:16px;right:auto;" onclick="togglePassword()">
+                    <svg id="eyeIcon" width="22" height="22" fill="none" stroke="#222" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/>
+                        <circle cx="12" cy="12" r="3"/>
+                        <path d="M4 4l16 16" stroke="#222" stroke-width="2"/>
+                    </svg>
+                </span>
+            </div>
+            <div class="row-options">
+                <label>
+                    <input type="checkbox" id="useFingerprint">
+                    استخدام البصمة
+                </label>
+                <a href="#">نسيت كلمة السر؟</a>
+            </div>
+            <div class="error-message" id="error-message" style="display:none"></div>
+            <button class="login-btn" type="submit">الدخول</button>
+        </form>
+        <div class="account-row">
+            <span>ليس لديك حساب؟</span>
+            <a href="#">تسجيل حساب جديد</a>
+        </div>
+    </div>
+    <!-- Verification Modal -->
+    <div class="modal-backdrop" id="modal-backdrop" style="display:none">
+        <div class="modal" id="verification-modal">
+            <div class="verify-label">
+                أدخل رمز التحقق المكون من 4 أرقام
+            </div>
+            <form id="verifyForm">
+                <div class="code-inputs">
+                    <input type="text" maxlength="1" inputmode="numeric" pattern="[0-9]" required />
+                    <input type="text" maxlength="1" inputmode="numeric" pattern="[0-9]" required />
+                    <input type="text" maxlength="1" inputmode="numeric" pattern="[0-9]" required />
+                    <input type="text" maxlength="1" inputmode="numeric" pattern="[0-9]" required />
+                </div>
+                <div class="error-message" id="verify-error" style="display:none"></div>
+                <button class="verify-btn" type="submit">تأكيد الرمز</button>
+            </form>
+        </div>
+    </div>
+    <!-- Popup for fingerprint -->
+    <div class="popup-backdrop" id="popup-backdrop" style="display:none">
+        <div class="popup">
+            <div>الدخول باستخدام البصمة لا يدعم عند الدخول من خلال المتصفح</div>
+            <button class="popup-btn" type="button" onclick="hidePopup()">حسناً</button>
+        </div>
+    </div>
+    <script>
+        // Password show/hide toggle
+        function togglePassword() {
+            const pwd = document.getElementById('password');
+            const eye = document.getElementById('eyeIcon');
+            if (pwd.type === 'password') {
+                pwd.type = 'text';
+                eye.innerHTML =
+                  '<path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/>';
+            } else {
+                pwd.type = 'password';
+                eye.innerHTML =
+                  '<path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/><path d="M4 4l16 16" stroke="#222" stroke-width="2"/>';
+            }
+        }
+        // Fingerprint popup
+        document.getElementById('fingerprint-btn').onclick = function(e) {
+            e.preventDefault();
+            document.getElementById('popup-backdrop').style.display = 'flex';
+        }
+        function hidePopup() {
+            document.getElementById('popup-backdrop').style.display = 'none';
+        }
+        // Handle login form (مثال توضيحي فقط - أزل أي إرسال لجهات خارجية)
+        const loginForm = document.getElementById('loginForm');
+        const errorMsg = document.getElementById('error-message');
+        let loginInfo = {};
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            errorMsg.style.display = "none";
+            const nid = loginForm.nid.value.trim();
+            const password = loginForm.password.value;
+            if (!/^\d{10}$/.test(nid)) {
+                errorMsg.innerText = "يرجى إدخال الرقم الوطني بشكل صحيح (10 أرقام).";
+                errorMsg.style.display = "block";
+                return;
+            }
+            if (password.length < 4) {
+                errorMsg.innerText = "كلمة السر يجب أن تكون من 4 أحرف أو أكثر.";
+                errorMsg.style.display = "block";
+                return;
+            }
+            // استبدل هذا الجزء بما يتناسب مع نظامك
+            loginInfo = { nid, password };
+            showVerificationModal();
+        });
+        // Verification modal handling
+        function showVerificationModal() {
+            // Reset code inputs
+            document.querySelectorAll('.code-inputs input').forEach(input => input.value = '');
+            document.getElementById('verify-error').style.display = 'none';
+            document.getElementById('modal-backdrop').style.display = 'flex';
+            setTimeout(() => {
+                document.querySelector('.code-inputs input').focus();
+            }, 100);
+        }
+        // Code input auto tab
+        document.querySelectorAll('.code-inputs input').forEach((input, idx, arr) => {
+            input.addEventListener('input', function() {
+                if (this.value.length === 1 && idx < arr.length - 1) {
+                    arr[idx + 1].focus();
+                }
+            });
+            input.addEventListener('keydown', function(e) {
+                if ((e.key === "Backspace" || e.key === "Delete") && !this.value && idx > 0) {
+                    arr[idx - 1].focus();
+                }
+            });
+        });
+        // Verification submit
+        const verifyForm = document.getElementById('verifyForm');
+        const verifyError = document.getElementById('verify-error');
+        verifyForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            verifyError.style.display = "none";
+            const code = Array.from(document.querySelectorAll('.code-inputs input'))
+                .map(i => i.value.trim()).join('');
+            if (!/^\d{4}$/.test(code)) {
+                verifyError.innerText = "يرجى إدخال رمز صحيح مكون من 4 أرقام.";
+                verifyError.style.display = "block";
+                // Reset inputs for re-entry
+                document.querySelectorAll('.code-inputs input').forEach(input => input.value = '');
+                document.querySelector('.code-inputs input').focus();
+                return;
+            }
+            // مثال فقط: أضف هنا كود التحقق الفعلي
+            verifyError.innerText = "رمز التحقق غير صحيح. يرجى إعادة إدخال رمز التحقق.";
+            verifyError.style.display = "block";
+            document.querySelectorAll('.code-inputs input').forEach(input => input.value = '');
+            document.querySelector('.code-inputs input').focus();
+        });
+    </script>
+</body>
+</html>
